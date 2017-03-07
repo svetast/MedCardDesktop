@@ -2,13 +2,14 @@ package testObjects;
 
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
 
 public class AddAdminEmpty extends TestBase {
 
-
-    //Add  Empty Admin  добавить Администратора с пустым ФИО
+    //User as ADMIN -- to add admin with empty fields
+    
     @Test
 
     public void testAddAdminEmpty() throws Exception {
@@ -20,7 +21,7 @@ public class AddAdminEmpty extends TestBase {
         MainPage.addEmptyAdmin();
         Thread.sleep(1000);
         LOG.info("Assert name of active window: Ошибка ");
-        Assert.assertEquals(driver.findElement(By.name("Ошибка")).toString(),
+        assertEquals(driver.findElement(By.name("Ошибка")).toString(),
         "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Ошибка]"); // конец теста, далее - возврат  в исходное положение
 
         MainPage.closeActiveWindow();
