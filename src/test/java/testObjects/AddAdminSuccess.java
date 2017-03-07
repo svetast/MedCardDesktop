@@ -2,8 +2,9 @@ package testObjects;
 
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
 
 public class AddAdminSuccess extends TestBase {
 
@@ -12,7 +13,7 @@ public class AddAdminSuccess extends TestBase {
 
 
 
-    //Add Admin Success
+    //User as ADMIN -- to add Admin success
     @Test
     public void testAddAdminSuccess() throws Exception {
         Thread.sleep(3000);
@@ -23,7 +24,7 @@ public class AddAdminSuccess extends TestBase {
         MainPage.addAdminSuccess();
         Thread.sleep(100);
         LOG.info("Start assert name: Список Администраторов ");
-        Assert.assertEquals(driver.findElement(By.name("Список Администраторов")).toString(),
+        assertEquals(driver.findElement(By.name("Список Администраторов")).toString(),
                 "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Список Администраторов]");
         LOG.info("Start delete a New user");
         MainPage.deleteNewPerson();

@@ -2,7 +2,7 @@ package testObjects;
 
 public class AddEMC_Success extends TestBase {
 
-    //Add Success don't work yet
+    //User as ADMIN -- to add a new EMC success doesn't work yet
    /*@Test
     public void testAddEMC() throws Exception {
         LOG.info ("Begin Log In");

@@ -1,15 +1,16 @@
 package testObjects;
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
 
 public class AddRegistratorEmpty extends TestBase {
 
 
 
 
-    //Add  Empty Registrator-------  добавить Регистратора с пустым ФИО
+    //User as ADMIN -- to add a new Registrator with empty fields
     @Test
     public void testAddEmptyRegistrator() throws Exception {
         Thread.sleep(3000);
@@ -20,7 +21,7 @@ public class AddRegistratorEmpty extends TestBase {
         MainPage.addEmptyRegistrator();
         Thread.sleep(1000);
         LOG.info("Assert name of active window: Ошибка ");
-        Assert.assertEquals(driver.findElement(By.name("Ошибка")).toString(),
+        assertEquals(driver.findElement(By.name("Ошибка")).toString(),
                 "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Ошибка]"); // конец теста, далее - возврат  в исходное положение
 
         MainPage.closeActiveWindow();

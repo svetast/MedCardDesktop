@@ -2,6 +2,8 @@ package testObjects;
 
 public class AddEmptyEMC extends TestBase {
 
+    //User as ADMIN -- to add a new EMC with empty fields
+
     /*@Test
     public void startCreateSuccess() throws Exception {
         LOG.info("Begin Start Login");

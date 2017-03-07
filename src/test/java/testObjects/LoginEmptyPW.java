@@ -1,8 +1,9 @@
 package testObjects;
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
 
 
 public class LoginEmptyPW extends TestBase {
@@ -16,7 +17,7 @@ public class LoginEmptyPW extends TestBase {
         LOG.info ("Begin Empty Password");
         LoginPage.startEmptyPassword ();
         Thread.sleep (30000);
-        Assert.assertEquals (driver.findElement (By.name ("Ошибка")).toString (),
+        assertEquals (driver.findElement (By.name ("Ошибка")).toString (),
                 "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Ошибка]");
         LOG.info ("stop  of empty password");
         LoginPage.stopEmptyLoginPassword();

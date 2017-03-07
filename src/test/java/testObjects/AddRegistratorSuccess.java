@@ -2,12 +2,13 @@ package testObjects;
 
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
 
 public class AddRegistratorSuccess extends TestBase {
 
-    //Add Registrator  Success
+    ////User as ADMIN -- to add a new Registrator success
     @Test
     public void testAddRegistratorSuccess() throws Exception {
         Thread.sleep(3000);
@@ -18,7 +19,7 @@ public class AddRegistratorSuccess extends TestBase {
         MainPage.addRegistratorSuccess();
         Thread.sleep(100);
         LOG.info("Start assert name: Список регистраторов  ");
-        Assert.assertEquals(driver.findElement(By.name("Список регистраторов")).toString(),
+        assertEquals(driver.findElement(By.name("Список регистраторов")).toString(),
                 "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Список регистраторов]");
         LOG.info("Start delete a New Registrator");
         MainPage.deleteNewPerson();

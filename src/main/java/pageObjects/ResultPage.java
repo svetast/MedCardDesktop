@@ -1,10 +1,7 @@
 package pageObjects;
 
-
-import org.openqa.selenium.WebDriver;
-
-public class ResultPage extends BasePage {
-    public ResultPage(WebDriver driver) {
-        super(driver);
-    }
+/**
+ * Created by Stepanova_S on 07.03.2017.
+ */
+public class ResultPage {
 }
