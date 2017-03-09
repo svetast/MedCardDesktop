@@ -11,7 +11,6 @@ public class AddAdminEmpty extends TestBase {
     //User as ADMIN -- to add admin with empty fields
     
     @Test
-
     public void testAddAdminEmpty() throws Exception {
         Thread.sleep(3000);
         LOG.info("Start Log In");

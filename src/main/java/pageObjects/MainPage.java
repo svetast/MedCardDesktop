@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -207,6 +208,70 @@ public void startAdd(){
 
     }
 
+    //  метод добавления Администратора / успешно
+    public void addDocSuccess() throws AWTException, InterruptedException {
+        startAdd();
+        Robot robot = new Robot();
+        robot.delay(1000);
+        //перемещение с помощью стрелки вниз до искомого пункта меню Врачи , т.к. нет локаторов у искомого контролла
+        robot.keyPress(KeyEvent.VK_DOWN);
+        robot.keyRelease(KeyEvent.VK_DOWN);
+        robot.keyPress(KeyEvent.VK_DOWN);
+        robot.keyRelease(KeyEvent.VK_DOWN);
+        robot.keyPress(KeyEvent.VK_DOWN);
+        robot.keyRelease(KeyEvent.VK_DOWN);
+        robot.keyPress(KeyEvent.VK_DOWN);
+        robot.keyRelease(KeyEvent.VK_DOWN);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        Thread.sleep(1000);
+        //  клик по F5 - добавить нового пользователя
+        robot.keyRelease(KeyEvent.VK_F5);
+        robot.keyPress(KeyEvent.VK_F5);
+        // вводим ФИО Иван Иванов
+
+        robot.keyPress(KeyEvent.VK_B);
+        robot.keyRelease(KeyEvent.VK_B);
+        robot.keyPress(KeyEvent.VK_D);
+        robot.keyRelease(KeyEvent.VK_D);
+        robot.keyPress(KeyEvent.VK_F);
+        robot.keyRelease(KeyEvent.VK_F);
+        robot.keyPress(KeyEvent.VK_Y);
+        robot.keyRelease(KeyEvent.VK_Y);
+        robot.keyPress(KeyEvent.VK_SPACE);
+        robot.keyRelease(KeyEvent.VK_SPACE);
+        robot.keyPress(KeyEvent.VK_B);
+        robot.keyRelease(KeyEvent.VK_B);
+        robot.keyPress(KeyEvent.VK_D);
+        robot.keyRelease(KeyEvent.VK_D);
+        robot.keyPress(KeyEvent.VK_F);
+        robot.keyRelease(KeyEvent.VK_F);
+        robot.keyPress(KeyEvent.VK_Y);
+        robot.keyRelease(KeyEvent.VK_Y);
+        robot.keyPress(KeyEvent.VK_J);
+        robot.keyRelease(KeyEvent.VK_J);
+        robot.keyPress(KeyEvent.VK_D);
+        robot.keyRelease(KeyEvent.VK_D);
+        Thread.sleep(1000);
+        WebElement activeBox = driver.findElement(By.name("Активен"));
+        activeBox.click();
+        WebElement notDownloadBox = driver.findElement(By.name("Не выгружать на сайт"));
+        notDownloadBox.click();
+        WebElement spesialnost = driver.findElement(By.className("TEdit"));
+        //spesialnost.click();
+        //veprik
+        Actions actionDC = new Actions(driver);
+        spesialnost = driver.findElement(By.className("TEdit"));
+        spesialnost.click();
+        //actionDC.doubleClick(spesialnost);
+        actionDC.doubleClick();
+        //veprik
+        WebElement readyBut = driver.findElement(By.name("Готово"));
+        //readyBut.click();
+        Thread.sleep(2000);
+
+    }
+
 
     //метод закрытия Главного окна программы
     public void closeMainWindow() throws AWTException {
@@ -239,4 +304,29 @@ public void startAdd(){
     }
 
 
+    public void addDocEmpty() throws InterruptedException, AWTException {
+        startAdd();
+        Robot robot = new Robot();
+        robot.delay(1000);
+        //перемещение с помощью стрелки вниз до искомого пункта меню Врачи , т.к. нет локаторов у искомого контролла
+        robot.keyPress(KeyEvent.VK_DOWN);
+        robot.keyRelease(KeyEvent.VK_DOWN);
+        robot.keyPress(KeyEvent.VK_DOWN);
+        robot.keyRelease(KeyEvent.VK_DOWN);
+        robot.keyPress(KeyEvent.VK_DOWN);
+        robot.keyRelease(KeyEvent.VK_DOWN);
+        robot.keyPress(KeyEvent.VK_DOWN);
+        robot.keyRelease(KeyEvent.VK_DOWN);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        Thread.sleep(1000);
+        //  клик по F5 - добавить нового пользователя
+        robot.keyRelease(KeyEvent.VK_F5);
+        robot.keyPress(KeyEvent.VK_F5);
+        Thread.sleep(3000);
+        WebElement readyBut = driver.findElement(By.name("Готово"));
+        readyBut.click();
+
+
+    }
 }

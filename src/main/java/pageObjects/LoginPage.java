@@ -22,8 +22,8 @@ public class LoginPage extends BasePage {
 
     // авторизация  как ADMIN
     public void authorizationAdmin() throws InterruptedException, Exception {
-        WebElement pwButton = driver.findElement(By.className("TEdit"));
-        pwButton.click();
+        //WebElement pwField = driver.findElement(By.className("TEdit"));
+        //pwField.click();
         Robot robot = new Robot();
         robot.delay(1000);
         //фокус на поле Введите пароль

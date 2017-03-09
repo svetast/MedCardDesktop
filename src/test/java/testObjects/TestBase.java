@@ -56,10 +56,6 @@ public class TestBase {
    /*@AfterMethodAdmin      ADMIN    public static void closeDriver() {
         if (driver != null) {
              driver.quit();
-
         }
-
     }*/
 }
-
-
