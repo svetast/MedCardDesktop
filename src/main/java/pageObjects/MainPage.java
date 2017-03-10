@@ -3,7 +3,6 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -257,18 +256,21 @@ public void startAdd(){
         activeBox.click();
         WebElement notDownloadBox = driver.findElement(By.name("Не выгружать на сайт"));
         notDownloadBox.click();
-        WebElement spesialnost = driver.findElement(By.className("TEdit"));
+        // WebElement spesialnost = driver.findElement(By.className("TEdit"));
         //spesialnost.click();
         //veprik
-        Actions actionDC = new Actions(driver);
-        spesialnost = driver.findElement(By.className("TEdit"));
-        spesialnost.click();
+        // Actions actionDC = new Actions(driver);
+        //spesialnost = driver.findElement(By.className("TEdit"));
+        //  spesialnost.click();
         //actionDC.doubleClick(spesialnost);
-        actionDC.doubleClick();
+        //  actionDC.doubleClick();
         //veprik
         WebElement readyBut = driver.findElement(By.name("Готово"));
-        //readyBut.click();
+        readyBut.click();
+        closeActiveWindow();
         Thread.sleep(2000);
+        //Actions builder = new Actions(driver);
+        // builder.doubleClick().build().perform();
 
     }
 

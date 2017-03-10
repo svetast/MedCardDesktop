@@ -6,7 +6,7 @@ public class AddEMC_Success extends TestBase {
    /*@Test
     public void testAddEMC() throws Exception {
         LOG.info ("Begin Log In");
-        LoginPage.startLoginAdmin();
+        LoginPage.authorizationAdmin();
         Thread.sleep(3000);
         LOG.info ("Begin AddMedCard");
         MainPage.addEMC();
