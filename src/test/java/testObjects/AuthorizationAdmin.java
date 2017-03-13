@@ -11,10 +11,10 @@ public class AuthorizationAdmin extends TestBase {
     //Login Success as ADMIN
     @Test
     public void testAuthorizationAdmin() throws Exception {
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         LOG.info ("Begin Login Success");
         LoginPage.authorizationAdmin();
-        Thread.sleep (30000);
+        Thread.sleep(5000);
         String f = driver.findElement (By.name ("Пользователь :: Администратор. (Администратор) 10.12.253.23 Тестовая БД->LocalHost")).toString ();
         LOG.info ("Get the title of the open window:");
         System.out.println (f);// наименование открытого окна

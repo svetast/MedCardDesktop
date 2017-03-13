@@ -9,20 +9,20 @@ import static org.testng.Assert.assertEquals;
 public class LoginEmptyPW extends TestBase {
 
 
-
+// logIn with empty PASSWORD
 
     @Test
     public void testEmptyPassword() throws Exception {
-        Thread.sleep(3000);
-        LOG.info ("Begin Empty Password");
+        Thread.sleep(5000);
+        LOG.info("Begin logIn with empty PASSWORD");
         LoginPage.startEmptyPassword ();
-        Thread.sleep (30000);
+        Thread.sleep(50000);
         assertEquals (driver.findElement (By.name ("Ошибка")).toString (),
                 "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Ошибка]");
-        LOG.info ("stop  of empty password");
+        LOG.info("Stop  logIn with empty PASSWORD");
         LoginPage.stopEmptyLoginPassword();
-        LOG.info ("stop  of autentification ");
-        LoginPage.stopAutentification ();
+        LOG.info("Stop  authorization ");
+        LoginPage.stopAuthorization();
     }
 
 

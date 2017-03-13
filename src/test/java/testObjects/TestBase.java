@@ -30,7 +30,7 @@ public class TestBase {
     @BeforeMethod
     public void setUpEnvironment() throws IOException {
 
-        options = new DesktopOptions(); //Instantiate WiAdminnium Desktop options
+        options = new DesktopOptions(); //Instantiate Winium Desktop options
         options.setApplicationPath("d:\\Users\\Stepanova_S\\MedCard_Test 10.12.253.23_Test\\PStartMedCard.exe");// set MedCard path
         File driverPath = new File("d:\\Users\\Stepanova_S\\Winium.Desktop.Driver.exe");// set Winium driver path
         service = new WiniumDriverService.Builder().usingDriverExecutable(driverPath).
@@ -45,7 +45,7 @@ public class TestBase {
         MainPage = PageFactory.initElements(driver, pageObjects.MainPage.class);
         CreateEMCardPage = PageFactory.initElements(driver, pageObjects.CreateEMCardPage.class);
         ResultPage = PageFactory.initElements(driver, pageObjects.ResultPage.class);
-        System.out.println("stop before test");
+        System.out.println("Stop Before test");
     }
 
 

@@ -39,6 +39,7 @@ public void startAdd(){
 //  метод добавления Администратора / успешно
    public void addAdminSuccess() throws AWTException, InterruptedException {
        startAdd();
+       Thread.sleep(3000);
        Robot robot = new Robot();
        robot.delay(1000);
         //перемещение с помощью стрелки вниз до искомого пункта меню Администраторы , т.к. нет локаторов у искомого контролла

@@ -11,13 +11,13 @@ public class AddRegistratorSuccess extends TestBase {
     ////User as ADMIN -- to add a new Registrator success
     @Test
     public void testAddRegistratorSuccess() throws Exception {
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         LOG.info("Start Log In");
         LoginPage.authorizationAdmin();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         LOG.info("Add a new Registrator success");
         MainPage.addRegistratorSuccess();
-        Thread.sleep(100);
+        Thread.sleep(5000);
         LOG.info("Start assert name: Список регистраторов  ");
         assertEquals(driver.findElement(By.name("Список регистраторов")).toString(),
                 "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Список регистраторов]");

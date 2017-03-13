@@ -7,18 +7,18 @@ import static org.testng.Assert.assertEquals;
 
 public class LoginEmptyFields extends TestBase {
 
-   // Login empty Name & PW
+    // LogIn with empty fields- Name  and PW
     @Test
     public void testLoginEmpty() throws Exception {
-        LOG.info ("start Login Empty Fields");
+        LOG.info("Start LogIn with empty fields- Name  and PW");
         LoginPage.startLoginEmptyAll();
-           Thread.sleep (30000);
+        Thread.sleep(5000);
         assertEquals (driver.findElement (By.name ("Ошибка")).toString (),
                 "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Ошибка]");
-        LOG.info ("stop  of Login Empty Fields");
+        LOG.info("Stop  LogIn with empty fields");
         LoginPage.stopEmptyLoginPassword();
-        LOG.info ("stop  of autentification ");
-        LoginPage.stopAutentification ();
+        LOG.info("Stop  authorization ");
+        LoginPage.stopAuthorization();
 
 
     }

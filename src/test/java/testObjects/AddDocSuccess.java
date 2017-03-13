@@ -11,13 +11,13 @@ public class AddDocSuccess extends TestBase {
     //User as ADMIN -- to add Doc / success
     @Test
     public void testDocSuccess() throws Exception {
-        Thread.sleep(3000);
+        Thread.sleep(000);
         LOG.info("Start Log In as ADMIN");
         LoginPage.authorizationAdmin();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         LOG.info("Start to add Doc success");
         MainPage.addDocSuccess();
-        Thread.sleep(100);
+        Thread.sleep(5000);
         LOG.info("Start assert name: Список врачей ");
         assertEquals(driver.findElement(By.name("Список врачей")).toString(),
                 "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Список врачей]");

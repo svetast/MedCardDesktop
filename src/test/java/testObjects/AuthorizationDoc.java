@@ -11,10 +11,10 @@ public class AuthorizationDoc extends TestBase {
     //Login Success as Doctor
     @Test
     public void testAuthorizationDoc() throws Exception {
-        Thread.sleep(3000);
-        LOG.info("begin Login Success sa Registrator");
+        Thread.sleep(5000);
+        LOG.info("begin LogIn success as DOC");
         LoginPage.authorizationDoc();
-        Thread.sleep(30000);
+        Thread.sleep(5000);
         String f = driver.findElement(By.name("Пользователь :: Сидоров Василий Владимирович. (Врач) 10.12.253.23 Тестовая БД->LocalHost")).toString();
         LOG.info("Get the title of the open window:");
         System.out.println(f);// наименование открытого окна

@@ -22,8 +22,8 @@ public class LoginPage extends BasePage {
 
     // авторизация  как ADMIN
     public void authorizationAdmin() throws InterruptedException, Exception {
-        //WebElement pwField = driver.findElement(By.className("TEdit"));
-        //pwField.click();
+        WebElement pwField = driver.findElement(By.className("TEdit"));
+        pwField.click();
         Robot robot = new Robot();
         robot.delay(1000);
         //фокус на поле Введите пароль
@@ -291,6 +291,9 @@ public class LoginPage extends BasePage {
         robot.keyRelease(KeyEvent.VK_ENTER);
 
     }
+
+
+    // analogically this method can use during case log In with a wrong PASSWORD
     public void stopEmptyLoginPassword() {
 
         WebElement errmess = driver.findElement (By.className ("TFMyMess"));
@@ -300,7 +303,7 @@ public class LoginPage extends BasePage {
 
     }
 
-    public void stopAutentification () throws InterruptedException {
+    public void stopAuthorization() throws InterruptedException {
         WebElement abortbutton = driver.findElement(By.className("TFAutorizacia"));
         Thread.sleep(3000);
         abortbutton.findElement (By.name ("Закрыть")).click ();

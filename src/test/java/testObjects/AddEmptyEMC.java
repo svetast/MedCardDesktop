@@ -1,19 +1,24 @@
 package testObjects;
 
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
+
 public class AddEmptyEMC extends TestBase {
 
     //User as ADMIN -- to add a new EMC with empty fields
 
-    /*@Test
+    @Test(enabled = false)
     public void startCreateSuccess() throws Exception {
-        LOG.info("Begin Start Login");
-        LoginPage.startLogin();
-        Thread.sleep(30000);
-        Assert.assertEquals(driver.findElement(By.name("Пользователь :: Администратор. (Администратор) 10.12.253.23 Тестовая БД->LocalHost")).toString(),
-                "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Пользователь :: Администратор. (Администратор) 10.12.253.23 Тестовая БД->LocalHost]");
+        LOG.info("Begin start logIn as ADMIN");
+        LoginPage.authorizationAdmin();
+        Thread.sleep(5000);
+        assertEquals(driver.findElement(By.name("Ошибка")).toString(),
+                "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Ошибка]"); // конец теста, далее - возврат  в исходное положение
         LOG.info("Begin create EMC");
         CreateEMCardPage.createEMC();
 
 
-    }*/
+    }
 }

@@ -12,13 +12,13 @@ public class AddDocEmpty extends TestBase {
     @Test
 
     public void testAddDocEmpty() throws Exception {
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         LOG.info("Start LOGIN as ADMIN");
         LoginPage.authorizationAdmin();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         LOG.info("Try to add Doc with empty fields");
         MainPage.addDocEmpty();
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         LOG.info("Check name of active window: Ошибка ");
         assertEquals(driver.findElement(By.name("Ошибка")).toString(),
                 "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Ошибка]"); // конец теста, далее - возврат  в исходное положение

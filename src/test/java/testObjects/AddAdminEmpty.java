@@ -12,14 +12,14 @@ public class AddAdminEmpty extends TestBase {
     
     @Test
     public void testAddAdminEmpty() throws Exception {
-        Thread.sleep(3000);
-        LOG.info("Start Log In");
+        Thread.sleep(5000);
+        LOG.info("Start LogIn as ADMIN");
         LoginPage.authorizationAdmin();
-        Thread.sleep(3000);
-        LOG.info("Add Empty Admin");
+        Thread.sleep(5000);
+        LOG.info("Add a new ADMIN with empty fields");
         MainPage.addEmptyAdmin();
-        Thread.sleep(1000);
-        LOG.info("Assert name of active window: Ошибка ");
+        Thread.sleep(5000);
+        LOG.info("Get name of active window: Ошибка ");
         assertEquals(driver.findElement(By.name("Ошибка")).toString(),
         "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Ошибка]"); // конец теста, далее - возврат  в исходное положение
 

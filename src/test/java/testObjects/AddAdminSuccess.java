@@ -16,21 +16,21 @@ public class AddAdminSuccess extends TestBase {
     //User as ADMIN -- to add Admin success
     @Test
     public void testAddAdminSuccess() throws Exception {
-        Thread.sleep(3000);
-        LOG.info("Start Log In");
+        LOG.info("Start LogIn as ADMIN");
         LoginPage.authorizationAdmin();
-        Thread.sleep(3000);
-        LOG.info("Add Admin success");
+        Thread.sleep(30000);
+        LOG.info("Add a new ADMIN => success");
         MainPage.addAdminSuccess();
-        Thread.sleep(100);
-        LOG.info("Start assert name: Список Администраторов ");
+        Thread.sleep(5000);
+        LOG.info("Get name of active window: Список Администраторов ");
         assertEquals(driver.findElement(By.name("Список Администраторов")).toString(),
                 "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Список Администраторов]");
-        LOG.info("Start delete a New user");
+        //Return the test to the initial state
+        LOG.info("Start delete a New user - ADMIN");
         MainPage.deleteNewPerson();
         LOG.info("Start close the Main window");
         MainPage.closeMainWindow();
-        //Thread.sleep(3000);
+
 
     }
 
