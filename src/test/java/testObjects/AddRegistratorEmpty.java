@@ -14,13 +14,13 @@ public class AddRegistratorEmpty extends TestBase {
     @Test
     public void testAddRegistratorEmpty() throws Exception {
 
-        LOG.info("Start LOGIN as ADMIN");
-        LoginPage.authorizationAdmin();
         BasePage.waitAction();
-        ;
+        LOG.info("Start LOGIN as ADMIN");
+        LoginAdminPage.authorizationAdmin();
+        BasePage.waitAction();
         LOG.info("To add a new Registrator with empty fields");
         MainPage.addEmptyRegistrator();
-        LOG.info("Get name of active window:");// наименование открытого окна
+        LOG.info("Get an error message :");// наименование открытого окна
         ErrorMessagePage.getErrorMessage(driver);
         assertEquals(driver.findElement(By.name("Ошибка")).toString(),
                 "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Ошибка]");

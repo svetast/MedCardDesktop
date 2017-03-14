@@ -13,11 +13,11 @@ public class AddAdminEmpty extends TestBase {
     @Test
     public void testAddAdminEmpty() throws Exception {
         LOG.info("Start LogIn as ADMIN");
-        LoginPage.authorizationAdmin();
+        LoginAdminPage.authorizationAdmin();
         BasePage.waitAction();
         LOG.info("Add a new ADMIN with empty fields");
         MainPage.addEmptyAdmin();
-        LOG.info("Get name of active window:");// наименование открытого окна
+        LOG.info("Get an error message :");// наименование открытого окна
         ErrorMessagePage.getErrorMessage(driver);
         //checking result of the test by pageObject.ResultPage:
         assertEquals(ResultPage.resultAddAdminEmpty(driver), "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Ошибка]");

@@ -7,6 +7,7 @@ import org.openqa.selenium.winium.DesktopOptions;
 import org.openqa.selenium.winium.WiniumDriver;
 import org.openqa.selenium.winium.WiniumDriverService;
 import org.testng.annotations.BeforeMethod;
+import pageObjects.LoginWrongDataPage;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,6 +22,13 @@ public class TestBase {
     pageObjects.CreateEMCardPage CreateEMCardPage;
     pageObjects.ResultPage ResultPage;
     pageObjects.ErrorMessagePage ErrorMessagePage;
+    pageObjects.LoginRegistratorPage LoginRegistratorPage;
+    pageObjects.LoginAdminPage LoginAdminPage;
+    pageObjects.LoginDocPage LoginDocPage;
+    pageObjects.LoginWrongDataPage LoginWrongDataPage;
+    pageObjects.LoginEmptyDataPage LoginEmptyDataPage;
+
+
 
 
     static WiniumDriver driver = null;
@@ -41,12 +49,25 @@ public class TestBase {
         PropertyConfigurator.configure("src/log4j.properties");
         Locale bLocale = new Locale.Builder().setLanguage("en").setRegion("US").build();
         System.out.println(bLocale.getDisplayLanguage());//получаю вывод актуальной локали в консоль
+
+
         BasePage = PageFactory.initElements(driver, pageObjects.BasePage.class);
         LoginPage = PageFactory.initElements(driver, pageObjects.LoginPage.class);
         MainPage = PageFactory.initElements(driver, pageObjects.MainPage.class);
         CreateEMCardPage = PageFactory.initElements(driver, pageObjects.CreateEMCardPage.class);
         ResultPage = PageFactory.initElements(driver, pageObjects.ResultPage.class);
         ErrorMessagePage = PageFactory.initElements(driver, pageObjects.ErrorMessagePage.class);
+        LoginRegistratorPage = PageFactory.initElements(driver, pageObjects.LoginRegistratorPage.class);
+        LoginAdminPage = PageFactory.initElements(driver, pageObjects.LoginAdminPage.class);
+        LoginDocPage = PageFactory.initElements(driver, pageObjects.LoginDocPage.class);
+        LoginWrongDataPage = PageFactory.initElements(driver, LoginWrongDataPage.class);
+        LoginEmptyDataPage = PageFactory.initElements(driver, pageObjects.LoginEmptyDataPage.class);
+       
+
+
+
+
+
         System.out.println("Stop @BeforeMethod ");
     }
 

@@ -12,12 +12,13 @@ public class AuthorizationRegistrator extends TestBase {
     //Login Success as Registrator
     @Test
     public void testAuthorizationRegistrator() throws Exception {
-        LOG.info("Begin LogIn as Registrator - success");
-        LoginPage.authorizationRegistrator();
         BasePage.waitAction();
-        String f = driver.findElement(By.name("Пользователь :: Петрова Алла Ивановна. (Регистратор) 10.12.253.23 Тестовая БД->LocalHost")).toString();
-        LOG.info("Get name of active window: Пользователь :: Петрова Алла Ивановна. (Регистратор) 10.12.253.23 Тестовая БД->LocalHost");
-        System.out.println(f);// наименование открытого окна
+        LOG.info("Begin LogIn as Registrator - success");
+        LoginRegistratorPage.authorizationRegistrator();
+        BasePage.waitAction();
+        LOG.info("Get name of active window: ");
+        // наименование открытого окна
+        ResultPage.getRegistratorTitle(driver);
         assertEquals(driver.findElement(By.name("Пользователь :: Петрова Алла Ивановна. (Регистратор) 10.12.253.23 Тестовая БД->LocalHost")).toString(),
                 "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Пользователь :: Петрова Алла Ивановна. (Регистратор) 10.12.253.23 Тестовая БД->LocalHost]");
         LOG.info("start the close  of the main menu");

@@ -12,12 +12,13 @@ public class AddDocEmpty extends TestBase {
     @Test
 
     public void testAddDocEmpty() throws Exception {
+        BasePage.waitAction();
         LOG.info("Start LOGIN as ADMIN");
-        LoginPage.authorizationAdmin();
+        LoginAdminPage.authorizationAdmin();
         BasePage.waitAction();
         LOG.info("Try to add Doc with empty fields");
         MainPage.addDocEmpty();
-        LOG.info("Get name of active window:");// наименование открытого окна
+        LOG.info("Get an error message:");// наименование открытого окна
         ErrorMessagePage.getErrorMessage(driver);
         assertEquals(driver.findElement(By.name("Ошибка")).toString(),
                 "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Ошибка]");

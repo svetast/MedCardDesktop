@@ -12,13 +12,14 @@ public class AddRegistratorSuccess extends TestBase {
     @Test
     public void testAddRegistratorSuccess() throws Exception {
 
+        BasePage.waitAction();
         LOG.info("Start LOGIN as ADMIN");
-        LoginPage.authorizationAdmin();
+        LoginAdminPage.authorizationAdmin();
         BasePage.waitAction();
         LOG.info("To add a new registrator");
         MainPage.addRegistratorSuccess();
-
-        LOG.info("Get name of active window: Список регистраторов  ");
+        LOG.info("Get name of active window:");
+        ResultPage.getAddRegistrTitle(driver);
         assertEquals(driver.findElement(By.name("Список регистраторов")).toString(),
                 "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Список регистраторов]");
         LOG.info("Delete a new registrator");
@@ -29,8 +30,14 @@ public class AddRegistratorSuccess extends TestBase {
     }
 
 
-
-
-
-
 }
+
+
+
+
+
+
+
+
+
+

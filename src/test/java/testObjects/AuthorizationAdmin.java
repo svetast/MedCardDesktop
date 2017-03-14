@@ -12,12 +12,13 @@ public class AuthorizationAdmin extends TestBase {
     @Test
     public void testAuthorizationAdmin() throws Exception {
 
-        LOG.info("Begin LogIn as ADMIN");
-        LoginPage.authorizationAdmin();
         BasePage.waitAction();
-        String f = driver.findElement (By.name ("Пользователь :: Администратор. (Администратор) 10.12.253.23 Тестовая БД->LocalHost")).toString ();
+        LOG.info("Begin LogIn as ADMIN");
+        LoginAdminPage.authorizationAdmin();
+        BasePage.waitAction();
         LOG.info("Get name of active window:");
-        System.out.println (f);// наименование открытого окна
+        // наименование открытого окна
+        ResultPage.getAdminTitle(driver);
         assertEquals (driver.findElement (By.name ("Пользователь :: Администратор. (Администратор) 10.12.253.23 Тестовая БД->LocalHost")).toString (),
                 "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Пользователь :: Администратор. (Администратор) 10.12.253.23 Тестовая БД->LocalHost]");
         LOG.info("Close  of the main window");

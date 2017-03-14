@@ -148,18 +148,30 @@ public void startAdd(){
         robot.keyRelease(KeyEvent.VK_Y);
         robot.keyPress(KeyEvent.VK_SPACE);
         robot.keyRelease(KeyEvent.VK_SPACE);
+        robot.keyPress(KeyEvent.VK_H);
+        robot.keyRelease(KeyEvent.VK_H);
+        robot.keyPress(KeyEvent.VK_T);
+        robot.keyRelease(KeyEvent.VK_T);
+        robot.keyPress(KeyEvent.VK_U);
+        robot.keyRelease(KeyEvent.VK_U);
         robot.keyPress(KeyEvent.VK_B);
         robot.keyRelease(KeyEvent.VK_B);
-        robot.keyPress(KeyEvent.VK_D);
-        robot.keyRelease(KeyEvent.VK_D);
+        robot.keyPress(KeyEvent.VK_C);
+        robot.keyRelease(KeyEvent.VK_C);
+        robot.keyPress(KeyEvent.VK_N);
+        robot.keyRelease(KeyEvent.VK_N);
+        robot.keyPress(KeyEvent.VK_H);
+        robot.keyRelease(KeyEvent.VK_H);
         robot.keyPress(KeyEvent.VK_F);
         robot.keyRelease(KeyEvent.VK_F);
-        robot.keyPress(KeyEvent.VK_Y);
-        robot.keyRelease(KeyEvent.VK_Y);
+        robot.keyPress(KeyEvent.VK_N);
+        robot.keyRelease(KeyEvent.VK_N);
         robot.keyPress(KeyEvent.VK_J);
         robot.keyRelease(KeyEvent.VK_J);
-        robot.keyPress(KeyEvent.VK_D);
-        robot.keyRelease(KeyEvent.VK_D);
+        robot.keyPress(KeyEvent.VK_H);
+        robot.keyRelease(KeyEvent.VK_H);
+
+
         Thread.sleep(1000);
         WebElement readyBut = driver.findElement(By.name("Готово"));
         readyBut.click();
