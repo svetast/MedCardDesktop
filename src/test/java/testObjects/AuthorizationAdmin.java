@@ -11,16 +11,16 @@ public class AuthorizationAdmin extends TestBase {
     //Login Success as ADMIN
     @Test
     public void testAuthorizationAdmin() throws Exception {
-        Thread.sleep(5000);
-        LOG.info ("Begin Login Success");
+
+        LOG.info("Begin LogIn as ADMIN");
         LoginPage.authorizationAdmin();
-        Thread.sleep(5000);
+        BasePage.waitAction();
         String f = driver.findElement (By.name ("Пользователь :: Администратор. (Администратор) 10.12.253.23 Тестовая БД->LocalHost")).toString ();
-        LOG.info ("Get the title of the open window:");
+        LOG.info("Get name of active window:");
         System.out.println (f);// наименование открытого окна
         assertEquals (driver.findElement (By.name ("Пользователь :: Администратор. (Администратор) 10.12.253.23 Тестовая БД->LocalHost")).toString (),
                 "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Пользователь :: Администратор. (Администратор) 10.12.253.23 Тестовая БД->LocalHost]");
-        LOG.info ("start the close  of the main menu");
+        LOG.info("Close  of the main window");
         MainPage.closeMainWindow();
     }
 

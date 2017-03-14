@@ -9,20 +9,21 @@ import static org.testng.Assert.assertEquals;
 public class AddAdminEmpty extends TestBase {
 
     //User as ADMIN -- to add admin with empty fields
-    
+
     @Test
     public void testAddAdminEmpty() throws Exception {
-        Thread.sleep(5000);
         LOG.info("Start LogIn as ADMIN");
         LoginPage.authorizationAdmin();
-        Thread.sleep(5000);
+        BasePage.waitAction();
         LOG.info("Add a new ADMIN with empty fields");
         MainPage.addEmptyAdmin();
-        Thread.sleep(5000);
-        LOG.info("Get name of active window: Ошибка ");
+        LOG.info("Get name of active window:");// наименование открытого окна
+        ErrorMessagePage.getErrorMessage(driver);
+        //checking result of the test by pageObject.ResultPage:
+        assertEquals(ResultPage.resultAddAdminEmpty(driver), "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Ошибка]");
+        //checking result of the test without pageObject.ResultPage:
         assertEquals(driver.findElement(By.name("Ошибка")).toString(),
-        "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Ошибка]"); // конец теста, далее - возврат  в исходное положение
-
+                "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Ошибка]");
         MainPage.closeActiveWindow();
         MainPage.abortActiveWindow();
         MainPage.abortActiveWindow();
@@ -31,4 +32,6 @@ public class AddAdminEmpty extends TestBase {
 
 
     }
+
+
 }

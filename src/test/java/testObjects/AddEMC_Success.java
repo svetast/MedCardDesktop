@@ -8,12 +8,12 @@ public class AddEMC_Success extends TestBase {
 
     @Test(enabled = false)
     public void testAddEMC() throws Exception {
-        LOG.info ("Begin Log In");
+        LOG.info("Start LogIn as ADMIN");
         LoginPage.authorizationAdmin();
-        Thread.sleep(5000);
-        LOG.info ("Begin AddMedCard");
-        MainPage.addEMC();
-        MainPage.closeMainWindow();
+        BasePage.waitAction();
+        LOG.info("Start to add a new EMC");
+        MainPage.startAddEMC();
+        // MainPage.closeMainWindow();
     }
 
 

@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -20,7 +21,7 @@ public void startAdd(){
     spravochnik.click();
 }
 
-    public void addEMC() throws AWTException {
+    public void startAddEMC() throws AWTException, InterruptedException {
         startAdd();
         System.out.print("Click on Spravochnik");
         Robot robot = new Robot();
@@ -34,7 +35,26 @@ public void startAdd(){
         robot.keyRelease(KeyEvent.VK_DOWN);
         robot.keyRelease(KeyEvent.VK_ENTER);
         robot.keyPress(KeyEvent.VK_ENTER);
+        WebElement patientList = driver.findElement(By.className("TDBGridEh"));
+        Actions actions = new Actions(driver);
+        actions.contextClick(patientList).build().perform();
+        //дальше не выполняется
+
+
+
+
             }
+
+
+    public void addEmptyFieldsEMC() throws AWTException {
+        Robot robot = new Robot();
+        robot.delay(1000);
+        WebElement readyButton = driver.findElement(By.name("Готово"));
+        readyButton.click();
+    }
+
+
+
 
 //  метод добавления Администратора / успешно
    public void addAdminSuccess() throws AWTException, InterruptedException {
@@ -193,21 +213,6 @@ public void startAdd(){
 
 
 
-    // добавить Регистратора
-    public void addRegistrator() throws AWTException {
-        startAdd();
-        Robot robot = new Robot();
-        robot.delay(1000);
-        //перемещение с помощью стрелки вниз до искомого пункта меню Регистраторы , т.к. нет локаторов у искомого контролла
-        robot.keyPress(KeyEvent.VK_DOWN);
-        robot.keyRelease(KeyEvent.VK_DOWN);
-        robot.keyPress(KeyEvent.VK_DOWN);
-        robot.keyRelease(KeyEvent.VK_DOWN);
-        robot.keyRelease(KeyEvent.VK_ENTER);
-        robot.keyPress(KeyEvent.VK_ENTER);
-
-    }
-
     //  метод добавления Администратора / успешно
     public void addDocSuccess() throws AWTException, InterruptedException {
         startAdd();
@@ -257,21 +262,16 @@ public void startAdd(){
         activeBox.click();
         WebElement notDownloadBox = driver.findElement(By.name("Не выгружать на сайт"));
         notDownloadBox.click();
-        // WebElement spesialnost = driver.findElement(By.className("TEdit"));
-        //spesialnost.click();
-        //veprik
-        // Actions actionDC = new Actions(driver);
-        //spesialnost = driver.findElement(By.className("TEdit"));
-        //  spesialnost.click();
-        //actionDC.doubleClick(spesialnost);
-        //  actionDC.doubleClick();
-        //veprik
-        WebElement readyBut = driver.findElement(By.name("Готово"));
-        readyBut.click();
+        WebElement readyButton = driver.findElement(By.name("Готово"));
+        readyButton.click();
         closeActiveWindow();
         Thread.sleep(2000);
-        //Actions builder = new Actions(driver);
-        // builder.doubleClick().build().perform();
+        // срабатывает на другом элементе TEdit - их три с таким локатором
+        WebElement spesialnost = driver.findElement(By.className("TEdit"));
+        Actions builder = new Actions(driver);
+        builder.moveToElement(spesialnost).doubleClick().build().perform();
+
+
 
     }
 
@@ -332,4 +332,6 @@ public void startAdd(){
 
 
     }
+
+
 }

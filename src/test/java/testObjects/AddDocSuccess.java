@@ -9,19 +9,17 @@ import static org.testng.Assert.assertEquals;
 public class AddDocSuccess extends TestBase {
 
     //User as ADMIN -- to add Doc / success
-    @Test
+    @Test(enabled = false)
     public void testDocSuccess() throws Exception {
-        Thread.sleep(000);
         LOG.info("Start Log In as ADMIN");
         LoginPage.authorizationAdmin();
-        Thread.sleep(5000);
-        LOG.info("Start to add Doc success");
+        BasePage.waitAction();
+        LOG.info("Start to add a new Doc => success");
         MainPage.addDocSuccess();
-        Thread.sleep(5000);
-        LOG.info("Start assert name: Список врачей ");
+        LOG.info("Get name of active window : Список врачей ");
         assertEquals(driver.findElement(By.name("Список врачей")).toString(),
                 "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Список врачей]");
-        LOG.info("Start delete a new Doc");
+
         // MainPage.deleteNewPerson();
         //  LOG.info("Start close the Main window");
         // MainPage.closeMainWindow();

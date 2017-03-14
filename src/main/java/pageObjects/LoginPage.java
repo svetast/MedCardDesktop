@@ -305,7 +305,7 @@ public class LoginPage extends BasePage {
 
     public void stopAuthorization() throws InterruptedException {
         WebElement abortbutton = driver.findElement(By.className("TFAutorizacia"));
-        Thread.sleep(3000);
+        waitAction();
         abortbutton.findElement (By.name ("Закрыть")).click ();
 
     }

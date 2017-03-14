@@ -1,7 +1,20 @@
 package pageObjects;
 
-/**
- * Created by Stepanova_S on 07.03.2017.
- */
-public class ResultPage {
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+
+public class ResultPage extends BasePage {
+    public ResultPage(WebDriver driver) {
+        super(driver);
+    }
+
+
+    public String resultAddAdminEmpty(WebDriver driver) throws Exception {
+        return driver.findElement(By.name("Ошибка")).toString();
+
+
+    }
+
+
 }

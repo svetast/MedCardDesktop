@@ -13,16 +13,17 @@ public class AddRegistratorEmpty extends TestBase {
     //User as ADMIN -- to add a new Registrator with empty fields
     @Test
     public void testAddRegistratorEmpty() throws Exception {
-        Thread.sleep(5000);
-        LOG.info("Start Log In");
+
+        LOG.info("Start LOGIN as ADMIN");
         LoginPage.authorizationAdmin();
-        Thread.sleep(5000);
-        LOG.info("Add Empty Registrator");
+        BasePage.waitAction();
+        ;
+        LOG.info("To add a new Registrator with empty fields");
         MainPage.addEmptyRegistrator();
-        Thread.sleep(5000);
-        LOG.info("Assert name of active window: Ошибка ");
+        LOG.info("Get name of active window:");// наименование открытого окна
+        ErrorMessagePage.getErrorMessage(driver);
         assertEquals(driver.findElement(By.name("Ошибка")).toString(),
-                "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Ошибка]"); // конец теста, далее - возврат  в исходное положение
+                "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Ошибка]");
 
         MainPage.closeActiveWindow();
         MainPage.abortActiveWindow();

@@ -11,19 +11,19 @@ public class AddRegistratorSuccess extends TestBase {
     ////User as ADMIN -- to add a new Registrator success
     @Test
     public void testAddRegistratorSuccess() throws Exception {
-        Thread.sleep(5000);
-        LOG.info("Start Log In");
+
+        LOG.info("Start LOGIN as ADMIN");
         LoginPage.authorizationAdmin();
-        Thread.sleep(5000);
-        LOG.info("Add a new Registrator success");
+        BasePage.waitAction();
+        LOG.info("To add a new registrator");
         MainPage.addRegistratorSuccess();
-        Thread.sleep(5000);
-        LOG.info("Start assert name: Список регистраторов  ");
+
+        LOG.info("Get name of active window: Список регистраторов  ");
         assertEquals(driver.findElement(By.name("Список регистраторов")).toString(),
                 "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Список регистраторов]");
-        LOG.info("Start delete a New Registrator");
+        LOG.info("Delete a new registrator");
         MainPage.deleteNewPerson();
-        LOG.info("Start close the Main window");
+        LOG.info("Close the main window");
         MainPage.closeMainWindow();
 
     }

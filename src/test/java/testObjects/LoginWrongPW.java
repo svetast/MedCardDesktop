@@ -12,9 +12,10 @@ public class LoginWrongPW extends TestBase {
     // logIn with wrong PASSWORD
 @Test
 public void testWrongPassword() throws Exception {
-    Thread.sleep(5000);
-    LOG.info("Begin logIn with wrong PASSWORD");
+    LOG.info("Start logIn as ADMIN by wrong PASSWORD");
         LoginPage.startWrongPassword();
+    LOG.info("Get name of active window:");// наименование открытого окна
+    ErrorMessagePage.getMessage(driver);
         assertEquals(driver.findElement(By.className("TFMyMess")).toString(),
         "[[WiniumDriver:  on ANY (AwesomeSession)] -> class name: TFMyMess]");
     LOG.info("Stop logIn with wrong PASSWORD ");

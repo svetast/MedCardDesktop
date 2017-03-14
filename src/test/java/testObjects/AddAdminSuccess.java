@@ -18,10 +18,9 @@ public class AddAdminSuccess extends TestBase {
     public void testAddAdminSuccess() throws Exception {
         LOG.info("Start LogIn as ADMIN");
         LoginPage.authorizationAdmin();
-        Thread.sleep(30000);
+        BasePage.waitAction();
         LOG.info("Add a new ADMIN => success");
         MainPage.addAdminSuccess();
-        Thread.sleep(5000);
         LOG.info("Get name of active window: Список Администраторов ");
         assertEquals(driver.findElement(By.name("Список Администраторов")).toString(),
                 "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Список Администраторов]");

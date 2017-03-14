@@ -12,7 +12,9 @@ public class LoginEmptyFields extends TestBase {
     public void testLoginEmpty() throws Exception {
         LOG.info("Start LogIn with empty fields- Name  and PW");
         LoginPage.startLoginEmptyAll();
-        Thread.sleep(5000);
+        BasePage.waitAction();
+        LOG.info("Get name of active window:");// наименование открытого окна
+        ErrorMessagePage.getErrorMessage(driver);
         assertEquals (driver.findElement (By.name ("Ошибка")).toString (),
                 "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Ошибка]");
         LOG.info("Stop  LogIn with empty fields");

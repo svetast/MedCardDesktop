@@ -13,10 +13,12 @@ public class LoginEmptyPW extends TestBase {
 
     @Test
     public void testEmptyPassword() throws Exception {
-        Thread.sleep(5000);
+
         LOG.info("Begin logIn with empty PASSWORD");
         LoginPage.startEmptyPassword ();
-        Thread.sleep(50000);
+        BasePage.waitAction();
+        LOG.info("Get name of active window:");// наименование открытого окна
+        ErrorMessagePage.getErrorMessage(driver);
         assertEquals (driver.findElement (By.name ("Ошибка")).toString (),
                 "[[WiniumDriver:  on ANY (AwesomeSession)] -> name: Ошибка]");
         LOG.info("Stop  logIn with empty PASSWORD");

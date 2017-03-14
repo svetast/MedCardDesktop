@@ -20,6 +20,7 @@ public class TestBase {
     pageObjects.MainPage MainPage;
     pageObjects.CreateEMCardPage CreateEMCardPage;
     pageObjects.ResultPage ResultPage;
+    pageObjects.ErrorMessagePage ErrorMessagePage;
 
 
     static WiniumDriver driver = null;
@@ -45,7 +46,8 @@ public class TestBase {
         MainPage = PageFactory.initElements(driver, pageObjects.MainPage.class);
         CreateEMCardPage = PageFactory.initElements(driver, pageObjects.CreateEMCardPage.class);
         ResultPage = PageFactory.initElements(driver, pageObjects.ResultPage.class);
-        System.out.println("Stop Before test");
+        ErrorMessagePage = PageFactory.initElements(driver, pageObjects.ErrorMessagePage.class);
+        System.out.println("Stop @BeforeMethod ");
     }
 
 

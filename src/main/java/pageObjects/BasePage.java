@@ -22,6 +22,13 @@ public class BasePage {
         return driver;
     }
 
+    public void waitAction() throws InterruptedException {
+
+        Thread.sleep(30000);
+
+
+    }
+
 
 
 }
