@@ -11,7 +11,7 @@ public class AuthorizationDoc extends TestBase {
     //Login Success as Doctor
     @Test
     public void testAuthorizationDoc() throws Exception {
-        BasePage.waitAction();
+        BasePage.waitPause();
         LOG.info("Start LogIn as DOC1");
         LoginDocPage.authorizationDoc();
         BasePage.waitAction();

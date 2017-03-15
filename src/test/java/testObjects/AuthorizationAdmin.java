@@ -12,7 +12,7 @@ public class AuthorizationAdmin extends TestBase {
     @Test
     public void testAuthorizationAdmin() throws Exception {
 
-        BasePage.waitAction();
+        BasePage.waitPause();
         LOG.info("Begin LogIn as ADMIN");
         LoginAdminPage.authorizationAdmin();
         BasePage.waitAction();

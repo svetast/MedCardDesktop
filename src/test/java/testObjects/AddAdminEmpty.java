@@ -12,6 +12,7 @@ public class AddAdminEmpty extends TestBase {
 
     @Test
     public void testAddAdminEmpty() throws Exception {
+        BasePage.waitPause();
         LOG.info("Start LogIn as ADMIN");
         LoginAdminPage.authorizationAdmin();
         BasePage.waitAction();

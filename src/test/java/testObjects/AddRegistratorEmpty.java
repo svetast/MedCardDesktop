@@ -14,7 +14,8 @@ public class AddRegistratorEmpty extends TestBase {
     @Test
     public void testAddRegistratorEmpty() throws Exception {
 
-        BasePage.waitAction();
+
+        BasePage.waitPause();
         LOG.info("Start LOGIN as ADMIN");
         LoginAdminPage.authorizationAdmin();
         BasePage.waitAction();

@@ -29,7 +29,12 @@ public class BasePage {
 
     }
 
+    public void waitPause() throws InterruptedException {
 
+        Thread.sleep(5000);
+
+
+    }
 
 }
 

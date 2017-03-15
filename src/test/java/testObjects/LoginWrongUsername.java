@@ -12,10 +12,10 @@ public class LoginWrongUsername extends TestBase {
     // logIn with wrong USERNAME
     @Test
     public void testWrongUsername() throws Exception {
-        BasePage.waitAction();
+        BasePage.waitPause();
         LOG.info("Begin logIn with wrong USERNAME");
         LoginWrongDataPage.startWrongUsername();
-        BasePage.waitAction();
+        BasePage.waitPause();
         LOG.info("Get an error message:");// наименование открытого окна
         ErrorMessagePage.getErrorMessage(driver);
         assertEquals(driver.findElement(By.className("TFMyMess")).toString(),

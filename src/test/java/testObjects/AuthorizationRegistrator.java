@@ -12,7 +12,7 @@ public class AuthorizationRegistrator extends TestBase {
     //Login Success as Registrator
     @Test
     public void testAuthorizationRegistrator() throws Exception {
-        BasePage.waitAction();
+        BasePage.waitPause();
         LOG.info("Begin LogIn as Registrator - success");
         LoginRegistratorPage.authorizationRegistrator();
         BasePage.waitAction();
@@ -29,5 +29,4 @@ public class AuthorizationRegistrator extends TestBase {
 
 
     }
-
 

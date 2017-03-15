@@ -10,7 +10,7 @@ public class LoginEmptyFields extends TestBase {
     // LogIn with empty fields- Name  and PW
     @Test
     public void testLoginEmpty() throws Exception {
-        BasePage.waitAction();
+        BasePage.waitPause();
         LOG.info("Start LogIn with empty fields- Name and PW");
         LoginEmptyDataPage.startLoginEmptyAll();
         BasePage.waitAction();

@@ -11,7 +11,7 @@ public class AddDocSuccess extends TestBase {
     //User as ADMIN -- to add Doc / success
     @Test(enabled = false)
     public void testDocSuccess() throws Exception {
-        BasePage.waitAction();
+        BasePage.waitPause();
         LOG.info("Start Log In as ADMIN");
         LoginAdminPage.authorizationAdmin();
         BasePage.waitAction();

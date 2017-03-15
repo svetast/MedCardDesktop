@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.winium.DesktopOptions;
 import org.openqa.selenium.winium.WiniumDriver;
 import org.openqa.selenium.winium.WiniumDriverService;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeClass;
 import pageObjects.LoginWrongDataPage;
 
 import java.io.File;
@@ -36,7 +36,7 @@ public class TestBase {
     static DesktopOptions options = null;
 
 
-    @BeforeMethod
+    @BeforeClass
     public void setUpEnvironment() throws IOException {
 
         options = new DesktopOptions(); //Instantiate Winium Desktop options

@@ -13,7 +13,7 @@ public class LoginEmptyPW extends TestBase {
 
     @Test
     public void testEmptyPassword() throws Exception {
-        BasePage.waitAction();
+        BasePage.waitPause();
         LOG.info("Begin logIn with empty PASSWORD");
         LoginEmptyDataPage.startLoginEmptyAll();
         BasePage.waitAction();

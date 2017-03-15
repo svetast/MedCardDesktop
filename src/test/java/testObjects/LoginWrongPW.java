@@ -12,7 +12,7 @@ public class LoginWrongPW extends TestBase {
     // logIn with wrong PASSWORD
 @Test
 public void testWrongPassword() throws Exception {
-    BasePage.waitAction();
+    BasePage.waitPause();
     LOG.info("Start logIn as ADMIN by wrong PASSWORD");
     LoginWrongDataPage.startWrongPassword();
     LOG.info("Get an error message :");// наименование открытого окна
