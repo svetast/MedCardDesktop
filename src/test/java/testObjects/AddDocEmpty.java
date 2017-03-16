@@ -12,7 +12,6 @@ public class AddDocEmpty extends TestBase {
     @Test
 
     public void testAddDocEmpty() throws Exception {
-        BasePage.waitPause();
         LOG.info("Start LOGIN as ADMIN");
         LoginAdminPage.authorizationAdmin();
         BasePage.waitAction();

@@ -16,10 +16,11 @@ public class AddAdminSuccess extends TestBase {
     //User as ADMIN -- to add Admin success
     @Test
     public void testAddAdminSuccess() throws Exception {
+        BasePage.waitPause();
         LOG.info("Start LogIn as ADMIN");
         LoginAdminPage.authorizationAdmin();
         BasePage.waitAction();
-        LOG.info("Add a new ADMIN => Иван Иванов");
+        LOG.info("Add a new ADMIN => Иван Администратор");
         MainPage.addAdminSuccess();
         BasePage.waitPause();
         LOG.info("Get name of active window:");

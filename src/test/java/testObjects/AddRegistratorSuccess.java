@@ -16,7 +16,7 @@ public class AddRegistratorSuccess extends TestBase {
         LOG.info("Start LOGIN as ADMIN");
         LoginAdminPage.authorizationAdmin();
         BasePage.waitAction();
-        LOG.info("To add a new registrator");
+        LOG.info("To add a new registrator => Иван Регистратор");
         MainPage.addRegistratorSuccess();
         LOG.info("Get name of active window:");
         ResultPage.getAddRegistrTitle(driver);

@@ -32,7 +32,6 @@ public class AddRegistratorEmpty extends TestBase {
         LOG.info("Close the Main window");
         MainPage.closeMainWindow();
 
-
     }
 
 

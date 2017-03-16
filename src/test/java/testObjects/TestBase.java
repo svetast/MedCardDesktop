@@ -64,11 +64,6 @@ public class TestBase {
         LoginEmptyDataPage = PageFactory.initElements(driver, pageObjects.LoginEmptyDataPage.class);
        
 
-
-
-
-
-        System.out.println("Stop @BeforeMethod ");
     }
 
 
@@ -76,7 +71,8 @@ public class TestBase {
 
 
 
-   /*@AfterMethodAdmin      ADMIN    public static void closeDriver() {
+  /*@AfterClass
+      public static void closeDriver() {
         if (driver != null) {
              driver.quit();
         }
