@@ -293,10 +293,6 @@ public void startAdd(){
         robot.keyRelease(KeyEvent.VK_F);
         robot.keyPress(KeyEvent.VK_X);
         robot.keyRelease(KeyEvent.VK_X);
-
-
-
-
         Thread.sleep(1000);
         WebElement activeBox = driver.findElement(By.name("Активен"));
         activeBox.click();

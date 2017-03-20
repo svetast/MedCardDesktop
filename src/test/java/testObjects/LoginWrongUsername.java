@@ -9,7 +9,7 @@ import static org.testng.Assert.assertEquals;
 public class LoginWrongUsername extends TestBase {
 
 
-    // logIn with wrong USERNAME
+    // logIn with wrong USERNAME - p
     @Test
     public void testWrongUsername() throws Exception {
         BasePage.waitPause();
@@ -28,4 +28,6 @@ public class LoginWrongUsername extends TestBase {
 
 
     }
+
+
 }

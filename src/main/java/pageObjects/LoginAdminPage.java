@@ -55,8 +55,8 @@ public class LoginAdminPage extends BasePage {
         robot.keyRelease(KeyEvent.VK_SHIFT);
         robot.keyPress(KeyEvent.VK_SHIFT);
         robot.keyPress(KeyEvent.VK_I);
-        robot.keyRelease(KeyEvent.VK_I);
         robot.keyRelease(KeyEvent.VK_SHIFT);
+        robot.keyRelease(KeyEvent.VK_I);
         robot.keyPress(KeyEvent.VK_SHIFT);
         robot.keyPress(KeyEvent.VK_N);
         robot.keyRelease(KeyEvent.VK_N);
