@@ -16,8 +16,8 @@ public class LoginRegistratorPage extends BasePage {
 
     // авторизация  как REGISTRATOR
     public void authorizationRegistrator() throws InterruptedException, Exception {
-        WebElement pwButton = driver.findElement(By.className("TEdit"));
-        pwButton.click();
+        // WebElement pwButton = driver.findElement(By.className("TEdit"));
+        // pwButton.click();
         Robot robot = new Robot();
         robot.delay(1000);
         //фокус на поле Введите пароль
@@ -64,7 +64,7 @@ public class LoginRegistratorPage extends BasePage {
         robot.keyRelease(KeyEvent.VK_A);
         WebElement readyButton = driver.findElement(By.name("Готово"));
         readyButton.click();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         //сообщение НЕ выгружать на сайт => клик по ДА = клик по ENTER
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);

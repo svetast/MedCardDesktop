@@ -13,7 +13,7 @@ public class LoginWrongUsername extends TestBase {
     @Test
     public void testWrongUsername() throws Exception {
         BasePage.waitPause();
-        LOG.info("Begin logIn with wrong USERNAME");
+        LOG.info("Start autorization with wrong USERNAME");
         LoginWrongDataPage.startWrongUsername();
         BasePage.waitPause();
         LOG.info("Get an error message:");// наименование открытого окна

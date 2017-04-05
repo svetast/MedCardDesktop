@@ -11,7 +11,7 @@ public class LoginEmptyFields extends TestBase {
     @Test
     public void testLoginEmpty() throws Exception {
         BasePage.waitPause();
-        LOG.info("Start LogIn with empty fields- Name and PW");
+        LOG.info("Start authorization with empty fields- Name and PW");
         LoginEmptyDataPage.startLoginEmptyAll();
         BasePage.waitAction();
         LOG.info("Get an error message :");// наименование открытого окна

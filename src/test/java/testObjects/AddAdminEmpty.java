@@ -6,14 +6,12 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-public class AddAdminEmpty extends TestBase {
-
-    //User as ADMIN -- to add admin with empty fields
+public class AddAdminEmpty extends TestBase {   //User as ADMIN -- to add admin with empty fields
 
     @Test
     public void testAddAdminEmpty() throws Exception {
         BasePage.waitPause();
-        LOG.info("Start LogIn as ADMIN");
+        LOG.info("Start ADMIN authorization");
         LoginAdminPage.authorizationAdmin();
         BasePage.waitAction();
         LOG.info("Add a new ADMIN with empty fields");

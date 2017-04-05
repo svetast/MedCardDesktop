@@ -13,7 +13,7 @@ public class LoginWrongPW extends TestBase {
 @Test
 public void testWrongPassword() throws Exception {
     BasePage.waitPause();
-    LOG.info("Start logIn as ADMIN by wrong PASSWORD");
+    LOG.info("Start ADMIN autorization by wrong PASSWORD");
     LoginWrongDataPage.startWrongPassword();
     LOG.info("Get an error message :");// наименование открытого окна
     ErrorMessagePage.getMessage(driver);
@@ -21,6 +21,7 @@ public void testWrongPassword() throws Exception {
         "[[WiniumDriver:  on ANY (AwesomeSession)] -> class name: TFMyMess]");
     LOG.info("Stop logIn with wrong PASSWORD ");
     LOG.info("Stop  authorization ");
+    BasePage.waitPause();
     LoginPage.stopAuthorization();
 
 

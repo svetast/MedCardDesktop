@@ -8,7 +8,7 @@ public class AddEMC_Success extends TestBase {
 
     @Test(enabled = false)
     public void testAddEMC() throws Exception {
-        LOG.info("Start LogIn as ADMIN");
+        LOG.info("Start ADMIN autorization");
         LoginAdminPage.authorizationAdmin();
         BasePage.waitAction();
         LOG.info("Start to add a new EMC");

@@ -13,7 +13,7 @@ public class AddRegistratorSuccess extends TestBase {
     public void testAddRegistratorSuccess() throws Exception {
 
         BasePage.waitPause();
-        LOG.info("Start LOGIN as ADMIN");
+        LOG.info("Start ADMIN autorization");
         LoginAdminPage.authorizationAdmin();
         BasePage.waitAction();
         LOG.info("To add a new registrator => Иван Регистратор");

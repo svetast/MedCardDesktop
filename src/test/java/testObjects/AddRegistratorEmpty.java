@@ -16,7 +16,7 @@ public class AddRegistratorEmpty extends TestBase {
 
 
         BasePage.waitPause();
-        LOG.info("Start LOGIN as ADMIN");
+        LOG.info("Start ADMIN authorization");
         LoginAdminPage.authorizationAdmin();
         BasePage.waitAction();
         LOG.info("To add a new Registrator with empty fields");

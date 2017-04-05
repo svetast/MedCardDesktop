@@ -19,7 +19,6 @@ public class LoginWrongDataPage extends BasePage {
         Robot robot = new Robot();
         robot.delay(1000);
         //фокус на поле Введите пароль
-
         robot.keyPress(KeyEvent.VK_A);
         robot.keyRelease(KeyEvent.VK_A);
         //перехожу к полю Введите имя
@@ -30,7 +29,7 @@ public class LoginWrongDataPage extends BasePage {
         //удаляю данные прошлой авторизации
         robot.keyPress(KeyEvent.VK_DELETE);
         robot.keyRelease(KeyEvent.VK_DELETE);
-        //ввожу логин в поле Введите имя
+        //ввожу ADMIN в поле Введите имя
         robot.keyPress(KeyEvent.VK_SHIFT);
         robot.keyPress(KeyEvent.VK_A);
         robot.keyRelease(KeyEvent.VK_A);
@@ -51,6 +50,7 @@ public class LoginWrongDataPage extends BasePage {
         robot.keyPress(KeyEvent.VK_N);
         robot.keyRelease(KeyEvent.VK_N);
         robot.keyRelease(KeyEvent.VK_SHIFT);
+        Thread.sleep(2000);
         WebElement readyButton = driver.findElement(By.name("Готово"));
         readyButton.click();
     }
@@ -89,6 +89,7 @@ public class LoginWrongDataPage extends BasePage {
         //ввожу логин в поле Введите имя
         robot.keyPress(KeyEvent.VK_P);
         robot.keyRelease(KeyEvent.VK_P);
+        Thread.sleep(1000);
         WebElement readyButton = driver.findElement(By.name("Готово"));
         readyButton.click();
         Thread.sleep(3000);

@@ -15,8 +15,8 @@ public class LoginDocPage extends BasePage {
 
     // авторизация  как DOCTOR
     public void authorizationDoc() throws InterruptedException, Exception {
-        WebElement pwButton = driver.findElement(By.className("TEdit"));
-        pwButton.click();
+        // WebElement pwButton = driver.findElement(By.className("TEdit"));
+        //  pwButton.click();
         Robot robot = new Robot();
         robot.delay(1000);
         //фокус на поле Введите пароль
@@ -28,7 +28,7 @@ public class LoginDocPage extends BasePage {
         robot.keyRelease(KeyEvent.VK_C);
         robot.keyPress(KeyEvent.VK_1);
         robot.keyRelease(KeyEvent.VK_1);
-        //перехов к полю Введите имя
+        //переход к полю Введите имя
         robot.keyPress(KeyEvent.VK_TAB);
         robot.keyRelease(KeyEvent.VK_TAB);
         robot.keyPress(KeyEvent.VK_TAB);

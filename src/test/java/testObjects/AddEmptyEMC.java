@@ -9,7 +9,7 @@ public class AddEmptyEMC extends TestBase {
     @Test(enabled = false)
     public void addEmptyEMC() throws Exception {
         BasePage.waitPause();
-        LOG.info("Start logIn as ADMIN");
+        LOG.info("Start ADMIN autorization");
         LoginAdminPage.authorizationAdmin();
         BasePage.waitAction();
         LOG.info("To add empty EMC on the Main Page");

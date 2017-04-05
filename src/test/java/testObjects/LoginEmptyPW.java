@@ -14,7 +14,7 @@ public class LoginEmptyPW extends TestBase {
     @Test
     public void testEmptyPassword() throws Exception {
         BasePage.waitPause();
-        LOG.info("Begin logIn with empty PASSWORD");
+        LOG.info("Start authorization by empty PASSWORD");
         LoginEmptyDataPage.startLoginEmptyAll();
         BasePage.waitAction();
         LOG.info("Get an error message :");// наименование открытого окна

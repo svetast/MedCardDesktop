@@ -13,7 +13,7 @@ public class AuthorizationRegistrator extends TestBase {
     @Test
     public void testAuthorizationRegistrator() throws Exception {
         BasePage.waitPause();
-        LOG.info("Begin LogIn as Registrator - success");
+        LOG.info("Start REGISTRATOR autorization");
         LoginRegistratorPage.authorizationRegistrator();
         BasePage.waitAction();
         LOG.info("Get name of active window: ");

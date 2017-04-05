@@ -12,7 +12,7 @@ public class AuthorizationDoc extends TestBase {
     @Test
     public void testAuthorizationDoc() throws Exception {
         BasePage.waitPause();
-        LOG.info("Start LogIn as DOC1");
+        LOG.info("Start DOC autorization");
         LoginDocPage.authorizationDoc();
         BasePage.waitAction();
         LOG.info("Get name of active window :");

@@ -17,7 +17,7 @@ public class LoginPage extends BasePage {
     }
 
 
-
+    //The method by which we close the Authorization Form
     public void stopAuthorization() throws InterruptedException {
         WebElement abortbutton = driver.findElement(By.className("TFAutorizacia"));
         waitAction();

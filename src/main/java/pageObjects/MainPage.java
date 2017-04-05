@@ -17,6 +17,7 @@ public class MainPage extends BasePage {
 //добавить Пациента - создать новую ЭМК - не работает , пока не работает  F5
 public void startAdd(){
     WebElement menu = driver.findElement(By.name("Приложение"));
+    menu.click();
     WebElement spravochnik = driver.findElement(By.name("Справочники"));
     spravochnik.click();
 }
@@ -59,7 +60,7 @@ public void startAdd(){
 //  метод добавления Администратора / успешно
    public void addAdminSuccess() throws AWTException, InterruptedException {
        startAdd();
-       Thread.sleep(3000);
+       Thread.sleep(2000);
        Robot robot = new Robot();
        robot.delay(1000);
         //перемещение с помощью стрелки вниз до искомого пункта меню Администраторы , т.к. нет локаторов у искомого контролла
@@ -71,7 +72,7 @@ public void startAdd(){
         //  клик по F5 - добавить нового пользователя
         robot.keyRelease(KeyEvent.VK_F5);
         robot.keyPress(KeyEvent.VK_F5);
-        // вводим ФИО Иван Иванов
+       // вводим ФИО иван администратор
 
         robot.keyPress(KeyEvent.VK_B);
         robot.keyRelease(KeyEvent.VK_B);
@@ -109,10 +110,9 @@ public void startAdd(){
        robot.keyRelease(KeyEvent.VK_J);
        robot.keyPress(KeyEvent.VK_H);
        robot.keyRelease(KeyEvent.VK_H);
-        Thread.sleep(1000);
-        WebElement readyBut = driver.findElement(By.name("Готово"));
-        readyBut.click();
-        Thread.sleep(2000);
+       Thread.sleep(3000);
+       WebElement readyButton = driver.findElement(By.name("Готово"));
+       readyButton.click();
 
     }
 
@@ -129,10 +129,11 @@ public void startAdd(){
         //  клик по F5 - добавить нового пользователя
         robot.keyRelease(KeyEvent.VK_F5);
         robot.keyPress(KeyEvent.VK_F5);
-        // оставим ФИО пустым
-        WebElement readyBut = driver.findElement(By.name("Готово"));
-        readyBut.click();
         Thread.sleep(2000);
+        // оставим ФИО пустым
+        WebElement readyButton = driver.findElement(By.name("Готово"));
+        readyButton.click();
+
 
     }
     //  метод добавления Регистратора / успешно
@@ -184,12 +185,10 @@ public void startAdd(){
         robot.keyRelease(KeyEvent.VK_J);
         robot.keyPress(KeyEvent.VK_H);
         robot.keyRelease(KeyEvent.VK_H);
-
-
-        Thread.sleep(1000);
-        WebElement readyBut = driver.findElement(By.name("Готово"));
-        readyBut.click();
         Thread.sleep(2000);
+        WebElement readyButton = driver.findElement(By.name("Готово"));
+        readyButton.click();
+
     }
 
     //  метод добавления Registrator с пустым ФИО
@@ -205,10 +204,11 @@ public void startAdd(){
         //  клик по F5 - добавить нового пользователя
         robot.keyRelease(KeyEvent.VK_F5);
         robot.keyPress(KeyEvent.VK_F5);
-        // оставим ФИО пустым
-        WebElement readyBut = driver.findElement(By.name("Готово"));
-        readyBut.click();
         Thread.sleep(2000);
+        // оставим ФИО пустым
+        WebElement readyButtton = driver.findElement(By.name("Готово"));
+        readyButtton.click();
+
 
     }
 
@@ -260,7 +260,6 @@ public void startAdd(){
         robot.keyRelease(KeyEvent.VK_F5);
         robot.keyPress(KeyEvent.VK_F5);
         // вводим ФИО Иван Иванов
-
         robot.keyPress(KeyEvent.VK_B);
         robot.keyRelease(KeyEvent.VK_B);
         robot.keyPress(KeyEvent.VK_D);
@@ -298,6 +297,7 @@ public void startAdd(){
         activeBox.click();
         WebElement notDownloadBox = driver.findElement(By.name("Не выгружать на сайт"));
         notDownloadBox.click();
+        Thread.sleep(2000);
         WebElement readyButton = driver.findElement(By.name("Готово"));
         readyButton.click();
         closeActiveWindow();
@@ -310,38 +310,6 @@ public void startAdd(){
 
 
     }
-
-
-    //метод закрытия Главного окна программы
-    public void closeMainWindow() throws AWTException {
-        WebElement titleBar = driver.findElement(By.id("TitleBar"));
-        WebElement closeMainMenuButton = titleBar.findElement(By.name("Закрыть"));
-        closeMainMenuButton.click();
-        closeActiveWindow();
-
-    }
-
-
-
-
-    //имитация клика по Enter в диалоговом окне "Выйти из программы Да /Нет"
-    public void closeActiveWindow() throws AWTException {
-        Robot robot = new Robot();
-        robot.delay(1000);
-        robot.keyRelease(KeyEvent.VK_ENTER);// нажать Да (или Готово) в диалоговом окне
-        robot.keyPress(KeyEvent.VK_ENTER);// отпустить клавишу Да (или Готово) в диалоговом окне
-
-    }
-
-    //имитация сброса - клика по клавише Esc  в активном диалоговом окне
-     public void abortActiveWindow() throws AWTException {
-        Robot robot = new Robot();
-        robot.delay(1000);
-         robot.keyRelease(KeyEvent.VK_ESCAPE);// нажать клавишу Ecs чтобы закрыть активное окно
-         robot.keyPress(KeyEvent.VK_ESCAPE);//отпустить клавишу Ecs
-
-    }
-
 
     public void addDocEmpty() throws InterruptedException, AWTException {
         startAdd();
@@ -362,12 +330,44 @@ public void startAdd(){
         //  клик по F5 - добавить нового пользователя
         robot.keyRelease(KeyEvent.VK_F5);
         robot.keyPress(KeyEvent.VK_F5);
-        Thread.sleep(3000);
-        WebElement readyBut = driver.findElement(By.name("Готово"));
-        readyBut.click();
+        Thread.sleep(2000);
+        WebElement readyButton = driver.findElement(By.name("Готово"));
+        readyButton.click();
 
 
     }
+
+
+    //метод закрытия Главного окна программы
+    public void closeMainWindow() throws AWTException {
+        WebElement titleBar = driver.findElement(By.id("TitleBar"));
+        WebElement closeMainMenuButton = titleBar.findElement(By.name("Закрыть"));
+        closeMainMenuButton.click();
+        closeActiveWindow();
+
+    }
+
+
+    //имитация клика по Enter в диалоговом окне "Выйти из программы Да /Нет"
+    public void closeActiveWindow() throws AWTException {
+        Robot robot = new Robot();
+        robot.delay(2000);
+        robot.keyRelease(KeyEvent.VK_ENTER);// нажать Да (или Готово) в диалоговом окне
+        robot.keyPress(KeyEvent.VK_ENTER);// отпустить клавишу Да (или Готово) в диалоговом окне
+
+    }
+
+    //имитация сброса - клика по клавише Esc  в активном диалоговом окне
+    public void abortActiveWindow() throws AWTException {
+        Robot robot = new Robot();
+        robot.delay(2000);
+        robot.keyRelease(KeyEvent.VK_ESCAPE);// нажать клавишу Ecs чтобы закрыть активное окно
+        robot.keyPress(KeyEvent.VK_ESCAPE);//отпустить клавишу Ecs
+
+    }
+
+
+
 
 
 }

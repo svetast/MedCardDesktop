@@ -13,7 +13,7 @@ public class AuthorizationAdmin extends TestBase {
     public void testAuthorizationAdmin() throws Exception {
 
         BasePage.waitPause();
-        LOG.info("Begin LogIn as ADMIN");
+        LOG.info("Start ADMIN autorization");
         LoginAdminPage.authorizationAdmin();
         BasePage.waitAction();
         LOG.info("Get name of active window:");

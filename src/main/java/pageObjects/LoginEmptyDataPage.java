@@ -39,7 +39,7 @@ public class LoginEmptyDataPage extends BasePage {
     }
 
 
-    // analogically this method can use during case log In with a wrong PASSWORD
+    //Метод, который используется для закрытия формы авторизации, когда пользователь вводит неправильный пароль или имя пользователя
     public void stopEmptyLoginPassword() {
 
         WebElement errmess = driver.findElement(By.className("TFMyMess"));

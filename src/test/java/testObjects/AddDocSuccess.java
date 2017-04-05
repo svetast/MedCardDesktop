@@ -12,7 +12,7 @@ public class AddDocSuccess extends TestBase {
     @Test(enabled = false)
     public void testDocSuccess() throws Exception {
         BasePage.waitPause();
-        LOG.info("Start Log In as ADMIN");
+        LOG.info("Start ADMIN autorization");
         LoginAdminPage.authorizationAdmin();
         BasePage.waitAction();
         LOG.info("Start to add a new Doc => Иван Иванов Врач");

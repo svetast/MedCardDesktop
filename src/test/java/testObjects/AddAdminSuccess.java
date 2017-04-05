@@ -17,7 +17,7 @@ public class AddAdminSuccess extends TestBase {
     @Test
     public void testAddAdminSuccess() throws Exception {
         BasePage.waitPause();
-        LOG.info("Start LogIn as ADMIN");
+        LOG.info("Start ADMIN autorization");
         LoginAdminPage.authorizationAdmin();
         BasePage.waitAction();
         LOG.info("Add a new ADMIN => Иван Администратор");

@@ -12,7 +12,8 @@ public class AddDocEmpty extends TestBase {
     @Test
 
     public void testAddDocEmpty() throws Exception {
-        LOG.info("Start LOGIN as ADMIN");
+        BasePage.waitPause();
+        LOG.info("Start ADMIN autorization");
         LoginAdminPage.authorizationAdmin();
         BasePage.waitAction();
         LOG.info("Try to add Doc with empty fields");
